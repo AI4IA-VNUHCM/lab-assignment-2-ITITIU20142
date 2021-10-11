@@ -15,7 +15,17 @@ int main(int argc, char *argv[]) {
 	int testcase = atoi(argv[1]);
 	
 	//Your codes here
-	
-	
-	return 0;
+	int t = testcase, c =0;
+	for(int i= 2; i*i<=testcase; i++){
+		while(t%i== 0){
+			if(c) printf(" * ");
+			c=1;
+			printf("%d", i);
+			t/=i;
+			}
+		}
+	if (t!= 1) {
+		if (c) printf(" * ");
+		printf("%d",t);	
+	}
 }
