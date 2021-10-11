@@ -22,6 +22,10 @@ int main(int argc, char *argv[]) {
 			c=1;
 			printf("%d", i);
 			t/=i;
+			}
 		}
+	if (t!= 1) {
+		if (c) printf(" * ");
+		printf("%d",t);	
 	}
 }
