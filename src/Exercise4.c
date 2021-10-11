@@ -21,15 +21,25 @@ int main(int argc, char *argv[]) {
 		test_array[i] = atoi(argv[i+1]);
 	}
 	//Your codes here
-	scanf("%d", &n);
-	for (int i = 0; i<n; i++){
-		scanf("%d", &test_array[i]);
+	for (i = 0; i<n/2; i++){ 
+		for (int j = i+1; j<n/2; j++){
+			if (test_array[i]>test_array[j]){
+				int temp = test_array[i];
+				test_array[i]=test_array[j];
+				test_array[j]=temp;
+			}
+		}
+		printf("%d ",test_array[i]);
 	}
-	for (int i = 0; i<=n/2; i++){
-		printf("%d",test_array[i]);
-	}
-	for (int j=n-1; j>=n/2; j--){
-		printf("%d", test_array[j]);	
+	for (i=n-1; i>=n/2; i--){
+		for (int j = i-1; j>=n/2; j--){
+			if (test_array[i]<test_array[j]){
+				int temp = test_array[i];
+				test_array[i]=test_array[j];
+				test_array[j]=temp;
+			}
+		}
+		printf("%d ", test_array[i]);	
 	}
 	return 0;
 }
